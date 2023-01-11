@@ -24,7 +24,8 @@ conectarDB();
 //CONFIGURAR CORS
 //ORIGINAL***********************************
 const whiteList = [
-  "http://localhost:5173" ||
+  "https://proyect-admin.netlify.app" ||
+    "http://localhost:5173" ||
     "http://127.0.0.1:5173" ||
     process.env.FRONTEND_URL ||
     "http://localhost:4000" ||
@@ -89,7 +90,8 @@ const io = new Server(servidor, {
   pingTimeout: 60000,
   // cors: { origin: "http://127.0.0.1:5173" },
   // cors: { origin: "http://localhost:5173" },
-  cors: { origin: process.env.FRONTEND_URL },
+  //cors: { origin: process.env.FRONTEND_URL },
+  cors: { "https://proyect-admin.netlify.app" },
 });
 
 io.on("connection", (socket) => {
