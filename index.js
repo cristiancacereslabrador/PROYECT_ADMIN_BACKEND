@@ -88,7 +88,8 @@ import { Server } from "socket.io";
 const io = new Server(servidor, {
   pingTimeout: 60000,
   // cors: { origin: "http://127.0.0.1:5173" },
-  cors: { origin: "http://localhost:5173" },
+  // cors: { origin: "http://localhost:5173" },
+  cors: { origin: process.env.FRONTEND_URL },
 });
 
 io.on("connection", (socket) => {

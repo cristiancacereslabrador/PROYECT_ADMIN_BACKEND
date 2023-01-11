@@ -1,5 +1,5 @@
 import Usuario from "../models/Usuario.js";
-import generarID from "../helpers/generarID.js";
+import generarId from "../helpers/generarId.js";
 import generarJWT from "../helpers/generarJWT.js";
 import { emailOlvidePassword, emailRegistro } from "../helpers/email.js";
 
@@ -16,7 +16,7 @@ const registrar = async (req, res) => {
   try {
     const usuario = new Usuario(req.body);
     // console.log("usuario traido de postman", usuario);
-    usuario.token = generarID();
+    usuario.token = generarId();
     // const usuarioAlmacenado = await usuario.save();
     // res.json(usuarioAlmacenado);
     await usuario.save();
@@ -95,7 +95,7 @@ async function olvidePassword(req, res) {
     return res.status(404).json({ msg: error.message });
   }
   try {
-    usuario.token = generarID();
+    usuario.token = generarId();
     // console.log("usuario", usuario);
     await usuario.save();
     //ENVIAR EMAIL
