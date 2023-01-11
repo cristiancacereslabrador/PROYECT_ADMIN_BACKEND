@@ -91,7 +91,7 @@ const io = new Server(servidor, {
   // cors: { origin: "http://127.0.0.1:5173" },
   // cors: { origin: "http://localhost:5173" },
   //cors: { origin: process.env.FRONTEND_URL },
-  cors: { "https://proyect-admin.netlify.app" },
+  cors: { origin: "https://proyect-admin.netlify.app" },
 });
 
 io.on("connection", (socket) => {
